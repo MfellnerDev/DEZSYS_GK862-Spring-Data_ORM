@@ -1,8 +1,45 @@
 ***
 
 **Autor**: Manuel Fellner
-**Version**: 12.03.2024
+**Version**: 09.04.2024
 
+## Questions
+
+**1. ORM (Object-Relational Mapping) and JPA:**
+
+- **ORM** is a technology that bridges the gap between object-oriented programming languages (like Java) and relational databases. It simplifies data access by allowing you to work with objects instead of raw SQL queries.
+- **JPA (Java Persistence API)** is a popular ORM framework for Java that provides a standardized way to map Java classes (entities) to database tables. It handles the translation between your object properties and database columns behind the scenes.
+
+**2. application.properties:**
+
+- This file is used to configure various aspects of your Spring Boot application. It can store settings like database connection details, server port, logging configuration, and more.
+- The `application.properties` file should be placed in the root directory of your Spring Boot project, alongside your main application class.
+
+**3. Entity Annotations:**
+
+These annotations are used to define the mapping between your Java classes and database tables. Here are some frequently used annotations:
+
+- `@Entity`: Marks a class as an entity that can be mapped to a database table.
+- `@Id`: Defines the primary key for an entity.
+- `@Table (name="tableName")`: Optionally specifies the name of the database table for the entity.
+- `@Column (name="columnName")`: Defines the mapping between a class property and a database column.
+- `@ManyToOne`, `@OneToMany`, `@OneToOne`: Annotations for defining relationships between entities.
+
+**Key Points for Annotations:**
+
+- An entity class must be annotated with `@Entity`.
+- Each entity must have a single property annotated with `@Id`.
+- Property names and column names can be matched using `@Column(name="columnName")`.
+- Use relationship annotations (`@ManyToOne`, etc.) to define connections between entities.
+
+**4. CRUD operations:**
+
+CRUD stands for Create, Read, Update, and Delete. These are the fundamental operations used to manage data in a database. Here are the methods typically used for CRUD with JPA:
+
+- **Create:** Use the `save()` method of the JPA repository to persist a new entity object in the database.
+- **Read:** Use the `findById()`, `findAll()`, or other finder methods provided by the JPA repository to retrieve entities from the database.
+- **Update:** Use the `save()` method again to update an existing entity object. Any changes to the object will be reflected in the database.
+- **Delete:** Use the `deleteById()` method of the JPA repository to remove an entity from the database.
 
 ## 1. Requirements for GKü
 
